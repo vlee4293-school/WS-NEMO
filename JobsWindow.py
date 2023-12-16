@@ -165,6 +165,7 @@ class Jobs(ctk.CTk):
         self.current = None
         self.config = None
         self.iconbitmap("favicon.ico")
+        self.title("WS-NEMO Demo")
 
         self.center_frame = ctk.CTkFrame(self)
         self.tab_bar = ctk.CTkFrame(self, height=35)
