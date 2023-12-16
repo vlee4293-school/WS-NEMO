@@ -3,6 +3,9 @@
 # Note
 Most of the existing codebase's functionality will be untouched. Most and/or all of the configuration fields will be tweaked to fit the problem domain of wildfire smoke detection. There are countless possible configurations for the model which will require a large amount of experimentation to get the adapted model working correctly.
 
+# Running
+Run the JobsWindow.py with Python 3.x.x
+
 # Future Implementations
 A graphical user interface (GUI) is planned to improve the usability of the model for both non-research oriented and research oriented parties.
 
