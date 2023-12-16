@@ -1,6 +1,6 @@
-train_imgs_dir: asdsad
-train_anns: asdasd
-val_imgs_dir: asdasd
+train_imgs_dir: asda
+train_anns: asd
+val_imgs_dir: asdas
 val_anns: ''
 test_imgs_dir: ''
 test_anns: ''

@@ -46,7 +46,7 @@ class ToplevelWindow(customtkinter.CTkToplevel):
                 yaml.dump(self.entries, f, default_flow_style=False, sort_keys=False)
             except yaml.YAMLError as exc:
                 print(exc)
-        root.get_config(os.path.basename(self.filepath))
+        root.get_config(os.path.basename(filename))
         self.destroy()
 
     def load_config_frame(self, root):
