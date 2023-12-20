@@ -1,10 +1,11 @@
 import customtkinter as ctk
 import multiprocessing as mp
 from job import my_job
-from toplevel import ToplevelWindow
 import datetime
 from evaluate_top_level import EvaluateTop
-from tl-config import ConfigTL
+from tl_config import ConfigTL
+import os
+from PIL import Image, ImageOps
 
 
 
@@ -133,29 +134,11 @@ class Jobs(ctk.CTk):
 
 
     def open_config(self):
-        ToplevelWindow(self)
+        ConfigTL(self)
 
     def get_config(self, config):
         self.config = config
         self.add_job()
-
-    def load_evaluate_images(self):
-        for i in os.listdir(os.getcwd()+"\images"):
-            image = Image.open(os.getcwd()+"\images\\"+i)
-            image = ImageOps.contain(image, size=(400, 250))
-            width, height = image.size
-            ar = height / width
-            image = ctk.CTkImage(image, size=(width, int(width * ar)))
-
-            label = ctk.CTkLabel(self.slideshow, image=image, text="")
-        self.slideshow.winfo_children()[0].pack()
-        next_button = ctk.CTkButton(self.main_frame, text="Next", command=self.next_image, corner_radius=0)
-        back_button = ctk.CTkButton(self.main_frame, text="Previous", command=self.back_image, corner_radius=0)
-        next_button.pack(side="bottom", anchor="se", pady=5)
-        back_button.pack(side="bottom", anchor="se")
-        self.geometry(f"{600}x{475}")
-        self.main_frame.configure(height=475)
-
 
     # The App
     def __init__(self):

@@ -35,6 +35,7 @@ class EvaluateTop(ctk.CTkToplevel):
     def __init__(self, root):
         super().__init__()
 
+        self.title = "Evaluation"
         self.slideshow = ctk.CTkFrame(self, corner_radius=0, height=250, width=400)
         self.slideshow.pack_propagate(False)
         self.slideshow.pack(pady=25, fill="x")

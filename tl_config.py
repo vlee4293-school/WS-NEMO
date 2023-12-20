@@ -111,10 +111,11 @@ config_values = {
     'max_epochs': ''
 }
 
-class ConfigTL(ctk.CTk):
-    def __init__(self, *args, **kwargs):
+class ConfigTL(ctk.CTkToplevel):
+    def __init__(self, root, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.load_main()
+        self.root = root
 
 
     def load_main(self):
@@ -198,9 +199,5 @@ class ConfigTL(ctk.CTk):
         filepath = filedialog.asksaveasfilename(initialdir=os.getcwd())
         with open(filepath, 'w') as f:
             yaml.dump(self.config_values, f, default_flow_style=False, sort_keys=False)
+        self.root.get_config(os.path.basename(filepath))
         self.destroy()
-
-
-if __name__ == '__main__':
-    window = ConfigTL()
-    window.mainloop()
